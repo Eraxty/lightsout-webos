@@ -150,15 +150,11 @@ It changes the copies, not the sources:
 - The service gets `legacy/service-compat.js` (`Object.assign`,
   `Buffer.from`, `fs.mkdirSync` with `recursive`, request timeouts), ws
   1.1.5 in place of ws 8, and the TV's own `webos-service` in place of the
-  pinned one.
-- The app gets `legacy/app-compat.js` (`scrollIntoView` options), and
-  `legacy/build.js` turns flex `gap`, `inset` and `aspect-ratio` into CSS
-  that Chrome 53 understands.
-
-`legacy/lightsout-renew.sh` is an optional Homebrew boot hook for rooted
-TVs. It wakes the service every six hours so the 4-day pass gets renewed
-even when nobody opens the app, and shows a toast once a day during the
-last two weeks of the sign-in.
+  pinned one. ws 1.1.5 and its two dependencies are committed in
+  `legacy/node_modules/`, so every build gets the same copy.
+- The app gets `legacy/app-compat.js` (`scrollIntoView` options and
+  `element.scrollTo`), and `legacy/build.js` turns flex `gap`, `inset` and
+  `aspect-ratio` into CSS that Chrome 53 understands.
 
 Tested on an LG webOS 4.10 TV (Node v0.12.2): the service, sign-in,
 renewal, season browsing and live timing. Playback on webOS 4 is not

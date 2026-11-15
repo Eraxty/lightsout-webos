@@ -7,9 +7,6 @@ if [ -e service/state ]; then
   exit 1
 fi
 
-[ -d legacy/deps/node_modules/ws ] || (mkdir -p legacy/deps && cd legacy/deps &&
-  npm init -y >/dev/null && npm install --no-save ws@1.1.5 >/dev/null)
-
 rm -rf build/legacy
 mkdir -p build/legacy/out
 cp -r app service build/legacy/

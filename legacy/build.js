@@ -6,7 +6,7 @@ var root = path.join(__dirname, "..", "build", "legacy");
 var appDir = path.join(root, "app");
 var serviceDir = path.join(root, "service");
 var modulesDir = path.join(serviceDir, "node_modules");
-var depsDir = path.join(__dirname, "deps", "node_modules");
+var depsDir = path.join(__dirname, "node_modules");
 
 patchService();
 patchApp();
